@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Example push action
         run: |
-          echo ${{ github.event_name }}
+          echo ${{ github.event.number }}
           echo "PR push action fired"
