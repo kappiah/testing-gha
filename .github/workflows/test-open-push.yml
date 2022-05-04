@@ -1,0 +1,14 @@
+name: Example push
+
+on:
+  pull_request:
+    types: [synchronize]
+
+jobs:
+  example-push-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example push action
+        run: |
+          echo ${{ github.event.number }}
+          echo "PR push action fired"

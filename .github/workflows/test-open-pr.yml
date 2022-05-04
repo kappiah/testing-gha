@@ -1,0 +1,13 @@
+name: Example open
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  example-open-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example open action
+        run: |
+          echo "PR open action fired"
