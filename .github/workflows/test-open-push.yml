@@ -10,5 +10,7 @@ jobs:
     steps:
       - name: Example push action
         run: |
-          echo ${{ github.event.number }}
+
+          echo "PR Number ${{ github.event.number }}"
+          echo "Branch ${GITHUB_HEAD_REF}"
           echo "PR push action fired"
