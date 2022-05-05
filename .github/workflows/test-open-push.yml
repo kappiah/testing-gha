@@ -8,7 +8,17 @@ jobs:
   example-push-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
       - name: Example push action
         run: |
-          echo ${{ github.event.number }}
+          # pr_number=$(gh pr view --json number -q .number)
+          # branch=$(gh pr view --json headRefName -q .headRefName)
+
+          echo "GH event number ${{ github.event.number }}"
+          echo "GH REF ${GITHUB_HEAD_REF}"
           echo "PR push action fired"
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
